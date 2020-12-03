@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <title>Emotion to Emoji</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="ml5.js"></script>
+    <script src="webcam.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <br>
+        <center>
+            <div class="part0">
+                <h1 class="heading">Emotion to Emoji</h1>
+                <br>
+                <h3>Trained to identify the following emotions:</h3>
+                <br>
+                <h5>Happy</h5>
+                <hr>
+                <h5>Sad</h5>
+                <hr>
+                <h5>Angry</h5>
+            </div>
+            <br>
+            <br>
+            <div class="part1">
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <label>Webcam</label>
+                    <div class="webcam" id="webcam-view" style="width: 360px; height: 250px;"></div>
+                    <br><br>
+                    <button onclick="capture_img()" type="reset" class="btn btn-info btn-lg btn-block">Capture
+                        Image</button>
+                </div>
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <label>Prediction 1</label>
+                    <p class="emotion-name" id="result-emotion-name1"></p>
+                    <p class="emoji" id="update-emoji1"></p>
+                    <br>
+                    <label>Prediction 2</label>
+                    <p class="emotion-name" id="result-emotion-name2"></p>
+                    <p class="emoji" id="update-emoji2"></p>
+                </div>
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <label>Picture</label>
+                    <div class="webcam" id="webcam-picture" style="width: 360px; height: 250px;"></div>
+                    <br><br>
+                    <button onclick="identify_img()" type="reset" class="btn btn-success btn-lg btn-block">Identify
+                        Image</button>
+                </div>
+            </div>
+        </center>
+        <br>
+        <br>
+    </div>
+</body>
+
+</html>
+
+<style>
+    .heading {
+        background-color: black;
+        color: cyan;
+        padding: 10px;
+    }
+
+    .container {
+        margin-bottom: 100px;
+        margin-top: 100px;
+        border: 3px solid black;
+        background-color: black;
+        overflow: hidden;
+    }
+
+    .part0 {
+        background-color: lightgray;
+        padding: 30px 10px;
+        width: 100%;
+    }
+
+    .part1 {
+        background-color: white;
+        padding: 30px 10px;
+        width: 100%;
+    }
+
+    .webcam {
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+    }
+
+    div {
+        overflow: hidden;
+    }
+</style>
